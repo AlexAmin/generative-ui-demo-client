@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "city": null,
+      "company": "ARD Online (SWR)",
+      "country": null,
+      "endDate": null,
+      "responsibilities": "Ich bin derzeit als Technischer Partnermanager bei der ARD Online (SWR) beschäftigt und fungiere in dieser Rolle als Bindeglied zwischen der ARD und ihren Partnern wie Google, Amazon und der Deutschen Telekom. Zu meinen Aufgaben zählen die Koordination der technischen Kommunikation, die Planung von Projekten sowie die Beratung der Stakeholder. Dabei arbeite ich eng mit unseren Entwicklern zusammen, um eine reibungslose Umsetzung zu gewährleisten. Besonders stolz bin ich auf die erfolgreiche Umsetzung der neuen Metadatenplattform der ARD.",
+      "role": "Technischer Partnermanager",
+      "seniority": null,
+      "startDate": null
+    },
+    {
+      "city": null,
+      "company": "Freelance",
+      "country": null,
+      "endDate": null,
+      "responsibilities": "Während meiner Karriere konnte ich umfangreiche Erfahrungen in den Bereichen Solution Architecture, Engineering, Consulting und Pre-Sales sammeln. Mit meinem breiten Know-how unterstütze ich Kunden unterschiedlicher Größe und bringe Projekte auch unter engen Zeitvorgaben zum erfolgreichen Abschluss.",
+      "role": "Software Engineer & Consultant",
+      "seniority": "Freelance",
+      "startDate": null
+    },
+    {
+      "city": null,
+      "company": "Frankfurt University of Applied Sciences",
+      "country": null,
+      "endDate": null,
+      "responsibilities": "Als Lehrbeauftragter an der Frankfurt University of Applied Sciences unterrichte ich dort die Vorlesung \"Mobile Application Exercises\". Die Möglichkeit, mein Wissen und meine Erfahrung an die nächste Generation von IT-Experten weiterzugeben, empfinde ich als sehr erfüllend.",
+      "role": "Lehrbeauftragter",
+      "seniority": null,
+      "startDate": null
+    },
+    {
+      "city": "Berlin / Frankfurt",
+      "company": "Hackerbay",
+      "country": null,
+      "endDate": "2019-08-08T00:00:00.000Z",
+      "responsibilities": "Als Senior Product Engineer habe ich Projekte aus dem Sales Kanal übernommen und diese zusammen mit dem Kunden zu erfolgreichen technischen Projekten aufgebaut. Dabei gehörten sowohl die Koordinierung mit Stakeholdern sowie die Absprache mit den IT-Abteilungen der Kunden zu meinem Aufgabenbereich. Ebenso war ich im Pre-Sales Bereich für die technical Sales bei Kundenterminen eingesetzt. Alle Projekte hatten einen direkten Einfluss auf messbare Ziele, um den Mehrwert direkt sichtbar zu machen. Kunden umfassten u.A. Vodafone DE, Valora Schweiz, Deutsche Bahn, Rüstungsunternehmen",
+      "role": "Senior Product Engineer",
+      "seniority": "Senior",
+      "startDate": "2018-08-08T00:00:00.000Z"
+    },
+    {
+      "city": "Butzbach",
+      "company": "High5-IT UG",
+      "country": null,
+      "endDate": "2018-07-02T00:00:00.000Z",
+      "responsibilities": "Als Geschäftsführer einer eigenen Firma hatte ich die Möglichkeit, die Pflichten und Aufgaben einer leitenden Rolle zu erleben und erlernen. Fokus meiner Arbeit,
