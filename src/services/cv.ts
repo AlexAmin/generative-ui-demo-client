@@ -34,7 +34,7 @@ export const useCVService = () => {
             const {done, value} = await reader.read();
             if (done) break
             const decoderResult = decoder.decode(value).trim()
-            const payloads: string[] = decoderResult.split("</item>")
+            const payloads: string[] = decoderResult.split("\n\n")
             for (const payload of payloads) {
                 if (payload.length === 0) continue
                 const chunk = JSON.parse(payload.trim())
@@ -43,7 +43,8 @@ export const useCVService = () => {
                 try {
                     const sectionText = jsonrepair(sectionedData[section])
                     cv.value[section] = JSON.parse(sectionText)
-                } catch (e) {} // JSON Parsing can sometimes fail, ignore
+                } catch (e) {
+                } // JSON Parsing can sometimes fail, ignore
             }
         }
     }
