@@ -33,8 +33,7 @@ export const useCVService = () => {
                 if (data.status === "done") unsubscribe()
             }, (error: FirestoreError) => {
                 console.warn("Firestore error", error)
-            }, () => console.log("completed firestore listener"))
-
+            })
         return null
     }
 
