@@ -24,3 +24,7 @@ async function getPageText(pdf: PDFJS.PDFDocumentProxy, pageNumber: number): Pro
         return (item as TextItem).str
     }).join("\n");
 }
+
+
+
+

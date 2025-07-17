@@ -1,11 +1,42 @@
-import axios from "axios";
+import axios, {type AxiosResponse} from "axios";
 import type {CV} from "../types/cv/CV.ts";
 import type {Ref} from "vue";
 import {CVSection} from "../types/CVSection.ts";
 import {jsonrepair} from "jsonrepair";
+import {
+    doc,
+    type DocumentSnapshot,
+    type FirestoreError,
+    getFirestore,
+    onSnapshot,
+    type Unsubscribe
+} from "firebase/firestore";
 
 const API_URL = import.meta.env.VITE_API_URL
 export const useCVService = () => {
+
+    async function promptCVFirestore(inputText: string, cvRef: Ref<CV>) {
+        const response: AxiosResponse<{ id: string }> = await axios.post(
+            `${API_URL}/firestore`,
+            {text: inputText}
+        )
+        if (response.status > 200) throw new Error("API request failed")
+        const db = getFirestore()
+        const id: string = response.data.id
+        cvRef.value = {}
+        const unsubscribe: Unsubscribe = onSnapshot(
+            doc(db, "cv", id),
+            (snapshot: DocumentSnapshot) => {
+                const data = snapshot.data()
+                if (!data) return
+                cvRef.value = data as CV
+                if (data.status === "done") unsubscribe()
+            }, (error: FirestoreError) => {
+                console.warn("Firestore error", error)
+            }, () => console.log("completed firestore listener"))
+
+        return null
+    }
 
     async function promptCV(inputText: string, cvRef: Ref<CV>) {
         const abortController = new AbortController()
@@ -24,10 +55,8 @@ export const useCVService = () => {
     }
 
     async function receiveStreamedCV(cv: Ref<CV>, stream: ReadableStream) {
-        const sectionedData: { [key: string]: string } = {}
-        for (const section of Object.values(CVSection)) {
-            sectionedData[section] = ""
-        }
+        const sectionedData: { [key: string]: string } =
+            Object.fromEntries(Object.values(CVSection).map(section => [section, ""]))
         const decoder = new TextDecoder("utf-8");
         const reader = stream.getReader();
         while (true) {
@@ -50,6 +79,7 @@ export const useCVService = () => {
     }
 
     return {
+        promptCVFirestore,
         promptCV
     }
 }

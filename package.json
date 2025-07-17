@@ -12,6 +12,7 @@
     "@phosphor-icons/vue": "^2.2.1",
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.8.4",
+    "firebase": "^11.10.0",
     "jsonrepair": "^3.12.0",
     "pdfjs-dist": "^5.1.91",
     "pinia": "^3.0.2",

@@ -4,12 +4,17 @@
       class="h-screen w-screen flex flex-col overflow-hidden
       bg-gray-100 dark:bg-gray-900
       text-gray-900 dark:text-gray-100 ">
+    <div class="flex flex-row gap-x-1 absolute top-0 right-0 px-3 py-1">
+      <input type="checkbox" v-model="cv.useFirestore"/>
+      <span>Firestore</span>
+    </div>
     <div class="flex-1 flex flex-col gap-y-8 max-w-7xl overflow-hidden mx-auto mt-8 w-full">
       <div class="flex flex-row w-full">
         <h1 class="text-3xl font-semibold">CV Analysis</h1>
         <div class="flex flex-row items-center gap-x-3 ml-auto">
           <LoadingComponent v-if="cv.loadingExtractingPDF || cv.loadingPrompt"/>
-          <PhosphorIcon v-if="Object.keys(cv.cv).length > 0" :icon="PhX" class="cursor-pointer hover:scale-105" @click="cv.cv = {}" size="xs"/>
+          <PhosphorIcon v-if="Object.keys(cv.cv).length > 0" :icon="PhX" class="cursor-pointer hover:scale-105"
+                        @click="cv.cv = {}" size="xs"/>
           <PhosphorIcon v-if="darkMode" :icon="PhSun" @click="()=>darkMode=false"/>
           <PhosphorIcon v-else :icon="PhMoon" @click="()=>darkMode=true"/>
         </div>

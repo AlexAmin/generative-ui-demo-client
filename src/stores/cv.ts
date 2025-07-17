@@ -13,6 +13,7 @@ export const useCVStore = defineStore("cv", () => {
     const cv: Ref<CV> = ref({})
     const loadingExtractingPDF: Ref<boolean> = ref(false)
     const loadingPrompt: Ref<boolean> = ref(false)
+    const useFirestore: Ref<boolean> = ref(true)
 
     function loadDemo() {
         cv.value[CVSection.PersonalInfo] = demo.personalInfo as unknown as CVPersonalInfo
@@ -29,7 +30,8 @@ export const useCVStore = defineStore("cv", () => {
         loadingPrompt.value = true
         loadingExtractingPDF.value = false
         cv.value = {}
-        await useCVService().promptCV(text, cv)
+        if(useFirestore.value) await useCVService().promptCVFirestore(text, cv)
+        else await useCVService().promptCV(text, cv)
         loadingPrompt.value = false
     }
 
@@ -38,6 +40,7 @@ export const useCVStore = defineStore("cv", () => {
         cv,
         loadingExtractingPDF,
         loadingPrompt,
+        useFirestore,
         loadDemo
     }
 })
